@@ -16,6 +16,7 @@ for name, i in base_m.named_parameters():
 
     newl = newLayer()
     newl.q_layer.copy_(W_q)
+    newl.weight_scale.fill_(s)
 
     base_m.layer = newl
     print("Swapped the old layer with the new layer")
